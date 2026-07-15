@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="digital clock made with HTML CSS & JavaScript"
+    />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <picture>
+      <source
+        srcset="./images/iron-man-mobile-wallpaper-400.avif"
+        media="(max-width:375px)"
+        type="image/avif"
+      />
+      <source
+        srcset="./images/Iron-Man-Desktop-Wallpaper-800.avif"
+        media="(max-width:1024px)"
+        type="image/avif"
+      />
+      <source
+        srcset="./images/iron-man-3rd.jpg"
+        media="(max-width:1600px)"
+        type="image/jpeg"
+      />
+      <source
+        srcset="./images/Iron-Man-Desktop-Wallpaper.jpg"
+        media="(min-width:1600px)"
+        type="image/jpeg"
+      />
+      <img src="./images/Iron-Man-Desktop-Wallpaper.jpg" alt="iron-man image" loading="lazy" decoding="async"/>
+    </picture>
+    <main id="container" role="main">
+      <div id="hidden-time" class="hidden" aria-live="polite"></div>
+      <div class="time">
+        <div class="time-box" id="hour">12</div>
+        <div class="time-box" id="minute">00</div>
+        <div class="time-box" id="second">00</div>
+        <div class="time-box" id="am-pm">PM</div>
+      </div>
+      <div class="date">
+        <div id="hidden-date" class="hidden" aria-live="polite"></div>
+        <div class="date-box" id="date">15</div>
+        <div class="date-box" id="month">07</div>
+        <div class="date-box" id="year">2026</div>
+      </div>
+    </main>
+    <script src="js/clock.js"></script>
+  </body>
+</html>
