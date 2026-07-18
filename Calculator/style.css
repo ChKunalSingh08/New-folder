@@ -6,6 +6,11 @@
   --button-color4: white;
   --text-color: white;
   --bg-color: white;
+  --button-color-shadow-red: rgb(191, 32, 32);
+  --button-color-shadow-orange: rgb(172, 125, 37);
+  --button-color-shadow-green: rgb(15, 79, 15);
+  --shadow-out: -3px 3px 0 rgba(255, 255, 255, 0.782);
+  --shadow-inset: inset -3px 3px 0 rgba(172, 172, 172, 0.325);
   --pxs: 5px;
   --ps: 10px;
   --pl: 20px;
@@ -42,10 +47,8 @@ body {
   font-size: 28px;
   text-align: right;
   padding: var(--ps);
-  border: none;
   border-radius: 8px;
   background: #fff;
-  box-sizing: border-box;
 }
 
 .buttons {
@@ -56,25 +59,80 @@ body {
 
 button {
   height: 60px;
-  border: none;
-  border-radius: 25%;
   font-size: 22px;
+  align-items: center;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.2s;
+  display: inline-flex;
+  justify-content: center;
+  padding: var(--pl);
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
 }
 
-button:hover {
-  transform: scale(1.05);
+.number:focus {
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+}
+
+.number:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.number:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .number {
   background: var(--bg-color);
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
 }
 
 .back,
 .operator {
   background: var(--button-color2);
   color: var(--text-color);
+  box-shadow:
+    var(--button-color-shadow-orange) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-orange) 0 -3px 0 inset;
+}
+
+.back:focus,
+.operator:focus {
+  box-shadow:
+    var(--button-color-shadow-orange) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-orange) 0 -3px 0 inset;
+}
+
+.back:hover,
+.operator:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-orange) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.back:active,
+.operator:active {
+  box-shadow: var(--button-color-shadow-orange) 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .equal {
@@ -84,12 +142,63 @@ button:hover {
   grid-row-start: 4;
   grid-row-end: 6;
   height: 100%;
-  border-radius: 15px;
+  box-shadow:
+    var(--button-color-shadow-green) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-green) 0 -3px 0 inset;
+}
+
+.equal:focus {
+  box-shadow:
+    var(--button-color-shadow-green) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-green) 0 -3px 0 inset;
+}
+
+.equal:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-green) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.equal:active {
+  box-shadow: var(--button-color-shadow-green) 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .clear {
   background: var(--button-color1);
   color: var(--text-color);
+  box-shadow:
+    var(--button-color-shadow-red) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-red) 0 -3px 0 inset;
+}
+
+.clear:focus {
+  box-shadow:
+    var(--button-color-shadow-red) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-red) 0 -3px 0 inset;
+}
+
+.clear:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--button-color-shadow-red) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.clear:active {
+  box-shadow: var(--button-color-shadow-red) 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 @media (max-width: 475px) {
@@ -98,7 +207,7 @@ button:hover {
     width: 235px;
   }
 
-  .display{
+  .display {
     font-size: 22px;
   }
 
@@ -109,13 +218,6 @@ button:hover {
 
   button {
     height: 45px;
-    border: none;
-    border-radius: 100%;
     font-size: 18px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .equal{
-  border-radius: 35px;
   }
 }

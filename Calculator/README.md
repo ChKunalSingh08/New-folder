@@ -129,7 +129,7 @@ Calculator/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/calculator.git
+git clone https://github.com/ChKunalSingh08/HTML-CSS-JS-Projects/tree/master/Calculator
 
 # Navigate to the project directory
 cd calculator
@@ -334,8 +334,6 @@ This project implements accessibility features for improved usability:
 - Email: your.email@example.com
 
 ## 📄 License
-
-This project is licensed under the **MIT License** — see the LICENSE file for details.
 
 You are free to use, modify, and distribute this project for personal and commercial purposes.
 
